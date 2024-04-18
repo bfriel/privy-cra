@@ -10,6 +10,11 @@ root.render(
   <React.StrictMode>
     <PrivyProvider
       appId={process.env.REACT_APP_PRIVY_APP_ID}
+      config={{
+        embeddedWallets: {
+          createOnLogin: 'users-without-wallets'
+        }
+      }}
       onSuccess={(user) => console.log(`User ${user.id} logged in!`)}
     >
       <App />
